@@ -1,0 +1,9 @@
+development:
+  elasticsearch:
+    host: elasticsearch
+    port: 9200
+
+test:
+  elasticsearch:
+    host: elasticsearch
+    port: 9200
