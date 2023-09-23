@@ -23,6 +23,9 @@ gem "jbuilder"
 
 gem "mongoid", "~> 8.1", ">= 8.1.1"
 
+# Pagination
+gem "pagy", "~> 6.0", ">= 6.0.4"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

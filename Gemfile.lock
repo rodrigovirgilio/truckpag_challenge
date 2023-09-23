@@ -199,6 +199,7 @@ GEM
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    pagy (6.0.4)
     psych (5.1.0)
       stringio
     puma (5.6.7)
@@ -308,6 +309,7 @@ DEPENDENCIES
   jbuilder
   mongoid (~> 8.1, >= 8.1.1)
   mongoid-rspec (~> 4.1)
+  pagy (~> 6.0, >= 6.0.4)
   puma (~> 5.0)
   rails (~> 7.0.8)
   rspec-rails (~> 6.0, >= 6.0.3)
