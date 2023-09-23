@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'api_details/show'
+  apipie
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/", to: "api_details#show"
+
+  namespace :api do
+    namespace :v1 do
+      resources :products, only: %i[index] do
+        collection do
+          put "/:code" => "products#update"
+          delete "/:code" => "products#destroy"
+          get "/:code" => "products#show"
+        end
+      end
+    end
+  end
 end
