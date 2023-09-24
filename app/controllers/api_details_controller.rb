@@ -21,7 +21,7 @@ class ApiDetailsController < ApplicationController
   private
 
   def check_database_read_status
-    read_result = client[:import_history].find({}).limit(1).to_a
+    read_result = client[:import_histories].find({}).limit(1).to_a
 
     if read_result.empty?
       "Erro na conexão de leitura: Não foi possível ler um documento do banco de dados."
