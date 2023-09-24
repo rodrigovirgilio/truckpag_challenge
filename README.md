@@ -43,12 +43,16 @@ Or using docker:
 You should then be able to navigate to http://localhost:3000 in a web browser.
 
 ## Test suite
+```ruby
   $ bundle exec rspec
+```
 ## Automatic import by CRON every day at 4 a.m.:
   [schedule.rb](https://github.com/rodrigovirgilio/truckpag_challenge/blob/main/config/initializers/schedule.rb)
 
 ## Or manual by rake console:
+```ruby
   $ bundle exec rake import_files:call
+```
 
 ![Screenshot 2023-09-24 at 13 13 28](https://github.com/rodrigovirgilio/truckpag_challenge/assets/392677/70043c06-4203-445a-9504-34f68124dd71)
 
@@ -58,17 +62,18 @@ You should then be able to navigate to http://localhost:3000 in a web browser.
 
 
 ## Rake to generate token for API authentication:
+```ruby
   $ bundle exec rake generate_token:authenticate
-
+```
 ## Steps to perform the tasks
 
 ## Generate token for API authentication in terminal:
 
 ### 1) By rake task
 ```ruby
-$ bundle exec rake generate_token:authenticate
-Authentication successfully created
-e7eea2ed3b6055c4e9fe3cc4ec5dac51
+  $ bundle exec rake generate_token:authenticate
+  Authentication successfully created
+  e7eea2ed3b6055c4e9fe3cc4ec5dac51
 ```
 
 ![Screenshot 2023-09-24 at 13 15 53](https://github.com/rodrigovirgilio/truckpag_challenge/assets/392677/1c76c234-5279-437b-a15d-5d14cb8d030a)
@@ -76,10 +81,10 @@ e7eea2ed3b6055c4e9fe3cc4ec5dac51
 
 ### 2) Or by terminal
 ```ruby
-$ bundle exec rails c
-$ auth = Authentication.create(name: "Authentication", token: SecureRandom.hex)
-auth.token
-"e7eea2ed3b6055c4e9fe3cc4ec5dac51"
+  $ bundle exec rails c
+  $ auth = Authentication.create(name: "Authentication", token: SecureRandom.hex)
+  auth.token
+  "e7eea2ed3b6055c4e9fe3cc4ec5dac51"
 ```
 
 ## Product management by API:
