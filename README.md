@@ -3,6 +3,10 @@
 
 >  This is a challenge by [Coodesh](https://coodesh.com/) - https://lab.coodesh.com/virgilio/products-parser-20230105
 
+### Video Presentation
+
+[Video](https://www.loom.com/share/9dbdf3c8fbd148398a3573cecc42326c)
+
 ## Installation
 
 First up, your system will need the
