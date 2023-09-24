@@ -29,9 +29,9 @@ class Api::V1::ProductsController < Api::V1::ApplicationController
   api :PUT, "/v1/products/:code", "Update Product by code"
   param_group :product_controller_update, Docs::ProductsControllerDoc
   def update
-    @product&.update(product_params)
+    if @product
+      @product&.update(product_params)
 
-    if @product&.save
       render json: @product
     else
       head :unprocessable_entity
@@ -41,9 +41,13 @@ class Api::V1::ProductsController < Api::V1::ApplicationController
   api :DELETE, "/v1/products/:code", "Delete Product by code"
   param_group :product_controller_destroy, Docs::ProductsControllerDoc
   def destroy
-    @product.update(status: Product::STATUS[:trash])
+    if @product
+      @product.update(status: Product::STATUS[:trash])
 
-    head :no_content
+      render json: @product
+    else
+      head :unprocessable_entity
+    end
   end
 
   private
