@@ -50,6 +50,7 @@ group :development, :test do
   gem "byebug", "~> 11.1", ">= 11.1.3"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "dotenv-rails"
   gem "factory_bot_rails", "~> 6.2"
   gem "ffaker", "~> 2.21"
   gem "rspec-rails", "~> 6.0", ">= 6.0.3"

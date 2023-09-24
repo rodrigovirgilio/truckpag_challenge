@@ -32,10 +32,7 @@ class Product
   field :main_category, type: String
   field :image_url, type: String
 
-  validates :code, presence: true
-  validates :code, uniqueness: { case_sensitive: false }
-
-  validates :status, :imported_t, presence: true
+  validates :code, :status, :imported_t, presence: true
 
   index({ code: 1 }, { unique: true, name: "product_code_index", background: true })
 end

@@ -83,7 +83,7 @@ namespace :import_files do
   end
 
   def import_history(file, error_details=nil)
-    client = Mongo::Client.new("mongodb://localhost:27017/truckpag_challenge_development")
+    client = Mongo::Client.new("mongodb://#{ENV["MONGODB_URL"]}/truckpag_challenge_development")
     collection = client[:import_history]
 
     import_history_document = {

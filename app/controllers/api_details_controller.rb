@@ -72,6 +72,6 @@ class ApiDetailsController < ApplicationController
   end
 
   def client
-    Mongo::Client.new("mongodb://localhost:27017/truckpag_challenge_development")
+    Mongo::Client.new("mongodb://#{ENV["MONGODB_URL"]}/truckpag_challenge_development")
   end
 end
