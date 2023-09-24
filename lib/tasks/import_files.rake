@@ -84,7 +84,7 @@ namespace :import_files do
 
   def import_history(file, error_details=nil)
     client = Mongo::Client.new("mongodb://#{ENV["MONGODB_URL"]}/truckpag_challenge_development")
-    collection = client[:import_history]
+    collection = client[:import_histories]
 
     import_history_document = {
       import_date: Time.now,

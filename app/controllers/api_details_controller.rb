@@ -32,7 +32,7 @@ class ApiDetailsController < ApplicationController
 
   def check_database_write_status
     document_to_insert = { name: "Exemplo", age: 30 }
-    write_result = client[:import_history].insert_one(document_to_insert)
+    write_result = client[:check_database_status].insert_one(document_to_insert)
 
     if write_result.n == 1
       "Conexão de escrita está OK."
@@ -42,7 +42,7 @@ class ApiDetailsController < ApplicationController
   end
 
   def last_cron_execution_time
-    collection = client[:import_history]
+    collection = client[:import_histories]
 
     pipeline = [
       { "$sort" => { "import_date" => -1 } },
